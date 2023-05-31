@@ -29,3 +29,8 @@ body {
     width: 100px;
     height: 100px;
 }
+
+.button-text {
+    text-align: center;
+    width: 100px;
+}
