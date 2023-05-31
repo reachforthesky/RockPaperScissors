@@ -48,6 +48,10 @@ function updateScore(pScore, cScore) {
 }
 
 function playRound(e){
+    if(playerScore === 5 || compScore === 5){
+        playerScore = 0;
+        compScore = 0;
+    }
     let playerChoice = e.target.id;
     let compChoice = getComputerChoice();
     let info = document.querySelector('.info')
@@ -62,11 +66,11 @@ function playRound(e){
     info.textContent = result[0];
     updateScore(playerScore,compScore);
     if(playerScore === 5){
-        console.log("You win the match!");
+        info.textContent = "You win the match! Select Rock, Paper, or Scissors to start a new match";
         return;
     }
     else if(compScore === 5){
-        console.log("You lose the match.");
+        info.textContent = "You lose the match! Select Rock, Paper, or Scissors to start a new match";
         return;
     }
     else {
